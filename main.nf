@@ -29,8 +29,16 @@ process bar {
   """
 }
 
+process pre {
+  script:
+  """
+  exit 0
+  """
+}
+
 workflow {
   main:
+  pre()
   channel.of(1..params.times) | foo
   bar()
 
