@@ -21,7 +21,6 @@ process foo {
 }
 
 process bar {
-  errorStrategy 'ignore'
   script:
   """
   echo "This task fails on purpose"
